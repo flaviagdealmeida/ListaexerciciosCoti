@@ -17,7 +17,7 @@ namespace Projeto1
             produto.Categoria = new Categoria();
 
 
-            Console.WriteLine(".:: CADASTRO DE PRODUTOS ::.");
+            Console.WriteLine(".::: CADASTRO DE PRODUTOS :::.");
             Console.Write("Informe ID do Produto: .................\t");
             produto.IdProduto = int.Parse(Console.ReadLine());
 

@@ -1,0 +1,66 @@
+﻿
+@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<p>
+
+    <h2 class="text-center text-primary">Consutar Funcionário</h2>
+    <br />
+    <br />
+</p>
+
+
+
+@model List<Projeto1.Presentation.Models.FuncionarioConsultaModel>
+
+
+@{
+    try
+    {
+
+        if (TempData["Mensagem"].ToString() != "")
+        {
+            <div class="alert alert-dismissible alert-danger">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>Atenção!</strong> <p>  @TempData["Mensagem"] </p>
+            </div>
+        }
+    }
+    catch { }
+}
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th class="bg-primary text-white">Id Funcionário</th>
+            <th class="bg-primary text-white">Nome do Funcionário</th>
+            <th class="bg-primary text-white">Salário</th>
+            <th class="bg-primary text-white">Data de Admissão</th>
+            <th class="bg-primary text-white">Operações</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.IdFuncionario</td>
+            <td>@item.Nome</td>
+            <td>@item.Salario</td>
+            <td>@item.DataAdmissao</td>
+            
+            <td>
+                <a href="/Funcionario/Edicao/@item.IdFuncionario" class="btn btn-success  text-center"><i class="fa fa-edit fa-2x"></i></a>
+                <a href="/Funcionario/Exclusao/@item.IdFuncionario" class="btn btn-danger text-center" onclick="return confirm('Deseja excluir o funcionário: @item.IdFuncionario');"><i class="fa fa-trash fa-2x"></i>&nbsp</a>
+
+            </td>
+        </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="6"> Total de Funcionários: @Model.Count</td>
+        </tr>
+    </tfoot>
+</table>

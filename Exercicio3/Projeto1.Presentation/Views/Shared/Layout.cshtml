@@ -1,0 +1,81 @@
+﻿
+<!DOCTYPE html> 
+
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 3</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/simplex/bootstrap.min.css" rel="stylesheet" integrity="sha384-1OYccka9EByiS23wvPFiYHBPRAgU91xYVFb8g8sen6vRiBI5Uko6+B87q8zPGUnA" crossorigin="anonymous">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <style>
+
+        footer {
+            padding: 2em;
+        }
+
+                
+        #tamanhoContainer{
+            min-height:490px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="/Home/Index"><i class="fa fa-user"></i> #SGF</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/Home/Index"><i class="fa fa-home fa-2x"></i> Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"> <i class="fa fa-users fa-2x"></i> Funcionários</a>
+                
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/Funcionario/Cadastro">Cadastrar Funcionário</a>
+                        <a class="dropdown-item" href="/Funcionario/Consulta">Consultar Funcionário</a>
+                        
+                    </div>
+                </li>
+               
+                <li class="nav-item">
+                    <a class="nav-link" href="/Home/Sobre"><i class="fa fa-ban fa-2x"></i> Sobre</a>
+                </li>
+            </ul>
+            
+        </div>
+    </nav>
+    <div class="container" id="tamanhoContainer">
+
+
+        @RenderBody()
+
+
+
+    </div>
+
+    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+
+
+    <footer class="bg-primary text-white text-center">
+     Desenvolvido por Flavia Almeida - Coti Informática - .Net 2019 
+
+    </footer>
+
+</body>
+
+
+</html>

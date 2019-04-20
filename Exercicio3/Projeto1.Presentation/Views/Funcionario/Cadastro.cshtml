@@ -1,0 +1,64 @@
+﻿
+
+@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<p>
+
+    <h2 class="text-center text-primary">Cadastrar Novo Funcionario</h2>
+    <br />
+    <br />
+</p>
+
+
+
+@model  Projeto1.Presentation.Models.FuncionarioCadastroModel
+
+
+@using (Html.BeginForm())
+{
+<span class="text-danger">
+    @Html.ValidationMessageFor(model => model.Nome)<br/>
+    @Html.ValidationMessageFor(model => model.Salario)<br />
+    @Html.ValidationMessageFor(model => model.DataAdmissao)<br />
+</span>
+
+    <div class="form-group row">
+        <label class="col-sm-3 col-form-label">Nome do Funcionário:</label>
+        @Html.TextBoxFor(model => model.Nome, new { @class = "form-control col-md-4" })
+    </div>
+
+    <div class="form-group row">
+        <label class="col-sm-3 col-form-label">Salário do Funcionário:</label>
+        @Html.TextBoxFor(model => model.Salario, new { @class = "form-control col-md-4" })
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-3 col-form-label">Admissão do Funcionário:</label>
+        @Html.TextBoxFor(model => model.DataAdmissao, new { @class = "form-control col-md-4" })
+    </div>
+
+    <br />
+
+    <p>
+
+        <input class="btn btn-success" type="submit" value="Cadastrar Funcionário" />
+
+    </p>
+
+}
+
+@{
+    try
+    {
+
+        if (TempData["Mensagem"].ToString() != "")
+        {
+            <div class="alert alert-dismissible alert-danger">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>Atenção!</strong> <p>  @TempData["Mensagem"] </p>
+            </div>
+        }
+    }
+    catch { }
+}
